@@ -1,0 +1,62 @@
+How to root Samsung Galaxy Tab A7 Lite (8.7 in)
+In this report, SM-T225(4GB Ram, LTE) was rooted.
+
+PC settings
+  install "Samsung Android USB Driver" for connecting the device to PC
+  install Frija for getting a stock ROM (firmware)
+  install Odin3 for writing ROM images to the device
+
+Download Stock ROM (pure factory ROM)
+  run Frija on PC
+  search stock ROM with specifying "Model" and "CSC" (e.g. SM-T225 / SIN)
+  download the ROM
+  extract the zip file (contains AP, BL, CP, CSC, HOME file)
+
+Patch AP ROM
+  connect device and PC at file transfer mode
+  transfer AP file of Stock ROM from PC to device (e.g. AP_T225XXU1AUJ1_*****.tar.md5)
+  install Magisk (Manager) to device and run
+  select Magisk Install
+  "Select and Patch a file"
+  select transferred AP file and patch it
+  transfer patched AP file to PC from device
+
+Device settings (Android OS will be initialized)
+  charge
+    charge battery to above 70%
+  enable Developer Options
+    Setting > About phone > Software Information
+    Tap "Build Number" several times
+    "Developer Options" appears at the bottom of "Settings"
+  change device settings
+    in "Developer Options"
+    activate "OEM unlocking" and "USB debugging"
+  unlock bootloader
+    Turn off the device
+    connect to PC via USB cable
+    keep pressing Volume up button and Volume down button
+    "Warning" blue screen runs
+    long press Volume up button to run Device unlock mode
+    press Volume up button to unlock bootloader
+    OS is initialized
+  
+ Write patched ROM
+  set device to Download mode
+    Turn off the device
+    connect to PC via USB cable
+    keep pressing Volume up button and Volume down button
+    "Warning" blue screen runs
+    press Volume up button to run to enter Downloading page
+  write ROM with Odin
+    run Odin on PC
+    check the USB connection is added at ID:COM
+    check BL, AP, CP, CSC and set the files (AP is the patched AP file, the others are Stock ROM)
+    "Start"
+    device is rebooted after writing
+    press Power button to continue boot (warning is displayed every time when device boots)
+
+root the device
+  install Magisk (Manager) again and run
+  install Magisk
+  device is rooted
+ 
